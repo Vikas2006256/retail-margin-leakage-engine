@@ -1,0 +1,201 @@
+﻿overall_bottleneck_rank,bottleneck_rank_within_ship_mode,region,state,ship_mode,total_shipments,state_avg_shipping_days,regional_benchmark_days,global_benchmark_days,days_above_regional_avg,pct_sla_breached,premium_sla_breaches,operational_status
+1,1,West,California,Standard Class,161,4.87,4.56,4.52,0.31,30.43,0,WITHIN_SLA
+2,2,South,Tennessee,Standard Class,97,4.81,4.61,4.52,0.2,28.87,0,WITHIN_SLA
+3,3,East,Massachusetts,Standard Class,105,4.77,4.48,4.52,0.29,25.71,0,WITHIN_SLA
+4,4,South,Kentucky,Standard Class,92,4.76,4.61,4.52,0.15,21.74,0,WITHIN_SLA
+5,5,Central,South Dakota,Standard Class,123,4.74,4.5,4.52,0.24,20.33,0,WITHIN_SLA
+6,6,West,Washington,Standard Class,113,4.73,4.56,4.52,0.17,15.93,0,WITHIN_SLA
+7,7,Central,Indiana,Standard Class,78,4.71,4.5,4.52,0.21,19.23,0,WITHIN_SLA
+7,7,East,New Hampshire,Standard Class,118,4.71,4.48,4.52,0.23,15.25,0,WITHIN_SLA
+8,8,East,New York,Standard Class,123,4.68,4.48,4.52,0.2,23.58,0,WITHIN_SLA
+9,9,West,Oregon,Standard Class,158,4.67,4.56,4.52,0.11,21.52,0,WITHIN_SLA
+10,10,South,Alabama,Standard Class,91,4.65,4.61,4.52,0.04,18.68,0,WITHIN_SLA
+10,10,South,Louisiana,Standard Class,77,4.65,4.61,4.52,0.04,29.87,0,WITHIN_SLA
+10,10,West,Idaho,Standard Class,124,4.65,4.56,4.52,0.09,26.61,0,WITHIN_SLA
+11,11,Central,Iowa,Standard Class,84,4.64,4.5,4.52,0.14,23.81,0,WITHIN_SLA
+11,11,Central,Texas,Standard Class,100,4.64,4.5,4.52,0.14,19.0,0,WITHIN_SLA
+12,12,Central,Illinois,Standard Class,128,4.61,4.5,4.52,0.11,16.41,0,WITHIN_SLA
+12,12,East,Maine,Standard Class,147,4.61,4.48,4.52,0.13,17.69,0,WITHIN_SLA
+13,13,Central,Minnesota,Standard Class,88,4.59,4.5,4.52,0.09,17.05,0,WITHIN_SLA
+13,13,West,Colorado,Standard Class,128,4.59,4.56,4.52,0.03,15.63,0,WITHIN_SLA
+13,13,West,Montana,Standard Class,152,4.59,4.56,4.52,0.03,17.11,0,WITHIN_SLA
+13,13,West,Wyoming,Standard Class,121,4.59,4.56,4.52,0.03,19.01,0,WITHIN_SLA
+14,14,East,Connecticut,Standard Class,85,4.58,4.48,4.52,0.1,21.18,0,WITHIN_SLA
+15,15,South,Mississippi,Standard Class,95,4.55,4.61,4.52,-0.06,11.58,0,WITHIN_SLA
+16,16,East,New Jersey,Standard Class,127,4.53,4.48,4.52,0.05,20.47,0,WITHIN_SLA
+17,17,East,Maryland,Standard Class,176,4.52,4.48,4.52,0.04,13.07,0,WITHIN_SLA
+17,17,West,Alaska,Standard Class,147,4.52,4.56,4.52,-0.04,19.05,0,WITHIN_SLA
+17,17,West,Arizona,Standard Class,148,4.52,4.56,4.52,-0.04,13.51,0,WITHIN_SLA
+17,17,West,Hawaii,Standard Class,146,4.52,4.56,4.52,-0.04,13.7,0,WITHIN_SLA
+18,18,Central,Wisconsin,Standard Class,138,4.51,4.5,4.52,0.01,10.14,0,WITHIN_SLA
+19,19,West,New Mexico,Standard Class,157,4.46,4.56,4.52,-0.1,11.46,0,WITHIN_SLA
+20,20,Central,Michigan,Standard Class,117,4.45,4.5,4.52,-0.05,7.69,0,WITHIN_SLA
+20,20,East,Georgia,Standard Class,130,4.45,4.48,4.52,-0.03,5.38,0,WITHIN_SLA
+21,21,East,Rhode Island,Standard Class,150,4.44,4.48,4.52,-0.04,8.0,0,WITHIN_SLA
+22,22,Central,Ohio,Standard Class,103,4.43,4.5,4.52,-0.07,16.5,0,WITHIN_SLA
+22,22,South,South Carolina,Standard Class,79,4.43,4.61,4.52,-0.18,8.86,0,WITHIN_SLA
+23,23,East,West Virginia,Standard Class,129,4.42,4.48,4.52,-0.06,16.28,0,WITHIN_SLA
+24,24,Central,Kansas,Standard Class,138,4.41,4.5,4.52,-0.09,4.35,0,WITHIN_SLA
+25,25,West,Utah,Standard Class,146,4.4,4.56,4.52,-0.16,15.07,0,WITHIN_SLA
+26,26,South,Arkansas,Standard Class,79,4.39,4.61,4.52,-0.22,10.13,0,WITHIN_SLA
+27,27,Central,North Dakota,Standard Class,94,4.38,4.5,4.52,-0.12,15.96,0,WITHIN_SLA
+27,27,East,North Carolina,Standard Class,143,4.38,4.48,4.52,-0.1,10.49,0,WITHIN_SLA
+28,28,Central,Oklahoma,Standard Class,110,4.37,4.5,4.52,-0.13,10.91,0,WITHIN_SLA
+29,29,East,Vermont,Standard Class,135,4.36,4.48,4.52,-0.12,17.04,0,WITHIN_SLA
+29,29,East,Virginia,Standard Class,113,4.36,4.48,4.52,-0.12,11.5,0,WITHIN_SLA
+30,30,East,Delaware,Standard Class,170,4.35,4.48,4.52,-0.13,15.29,0,WITHIN_SLA
+31,31,East,Florida,Standard Class,101,4.34,4.48,4.52,-0.14,15.84,0,WITHIN_SLA
+32,32,Central,Missouri,Standard Class,85,4.31,4.5,4.52,-0.19,9.41,0,WITHIN_SLA
+33,33,Central,Nebraska,Standard Class,151,4.29,4.5,4.52,-0.21,11.92,0,WITHIN_SLA
+34,34,East,Pennsylvania,Standard Class,120,4.26,4.48,4.52,-0.22,6.67,0,WITHIN_SLA
+35,35,West,Nevada,Standard Class,155,4.17,4.56,4.52,-0.39,8.39,0,WITHIN_SLA
+36,1,Central,Iowa,Second Class,21,3.48,2.98,3.02,0.5,0.0,0,WITHIN_SLA
+37,2,Central,South Dakota,Second Class,29,3.45,2.98,3.02,0.47,0.0,0,WITHIN_SLA
+38,3,East,New Hampshire,Second Class,39,3.36,3.04,3.02,0.32,0.0,0,WITHIN_SLA
+38,3,South,Louisiana,Second Class,22,3.36,3.02,3.02,0.34,0.0,0,WITHIN_SLA
+39,4,West,Arizona,Second Class,45,3.33,3.01,3.02,0.32,0.0,0,WITHIN_SLA
+40,5,South,South Carolina,Second Class,26,3.27,3.02,3.02,0.25,0.0,0,WITHIN_SLA
+41,6,East,Maine,Second Class,41,3.24,3.04,3.02,0.2,0.0,0,WITHIN_SLA
+42,7,East,North Carolina,Second Class,29,3.21,3.04,3.02,0.17,0.0,0,WITHIN_SLA
+42,7,West,Colorado,Second Class,34,3.21,3.01,3.02,0.2,0.0,0,WITHIN_SLA
+43,8,West,Nevada,Second Class,51,3.2,3.01,3.02,0.19,0.0,0,WITHIN_SLA
+44,9,East,Maryland,Second Class,39,3.18,3.04,3.02,0.14,0.0,0,WITHIN_SLA
+45,10,Central,Nebraska,Second Class,23,3.17,2.98,3.02,0.19,0.0,0,WITHIN_SLA
+45,10,East,Virginia,Second Class,46,3.17,3.04,3.02,0.13,0.0,0,WITHIN_SLA
+46,11,East,New York,Second Class,41,3.15,3.04,3.02,0.11,0.0,0,WITHIN_SLA
+47,12,East,West Virginia,Second Class,56,3.14,3.04,3.02,0.1,0.0,0,WITHIN_SLA
+48,13,West,Wyoming,Second Class,47,3.13,3.01,3.02,0.12,0.0,0,WITHIN_SLA
+49,14,West,Utah,Second Class,50,3.12,3.01,3.02,0.11,0.0,0,WITHIN_SLA
+50,15,South,Arkansas,Second Class,31,3.1,3.02,3.02,0.08,0.0,0,WITHIN_SLA
+51,16,South,Mississippi,Second Class,35,3.06,3.02,3.02,0.04,0.0,0,WITHIN_SLA
+52,17,East,Vermont,Second Class,39,3.03,3.04,3.02,-0.01,0.0,0,WITHIN_SLA
+52,17,West,New Mexico,Second Class,34,3.03,3.01,3.02,0.02,0.0,0,WITHIN_SLA
+53,18,West,Alaska,Second Class,52,3.02,3.01,3.02,0.01,0.0,0,WITHIN_SLA
+54,19,East,Pennsylvania,Second Class,74,3.01,3.04,3.02,-0.03,0.0,0,WITHIN_SLA
+55,20,Central,Kansas,Second Class,41,3.0,2.98,3.02,0.02,0.0,0,WITHIN_SLA
+55,20,East,Florida,Second Class,55,3.0,3.04,3.02,-0.04,0.0,0,WITHIN_SLA
+55,20,West,Montana,Second Class,43,3.0,3.01,3.02,-0.01,0.0,0,WITHIN_SLA
+56,21,East,Connecticut,Second Class,50,2.98,3.04,3.02,-0.06,0.0,0,WITHIN_SLA
+56,21,East,Massachusetts,Second Class,45,2.98,3.04,3.02,-0.06,0.0,0,WITHIN_SLA
+57,22,Central,Missouri,Second Class,38,2.97,2.98,3.02,-0.01,0.0,0,WITHIN_SLA
+58,23,Central,Minnesota,Second Class,21,2.95,2.98,3.02,-0.03,0.0,0,WITHIN_SLA
+59,24,Central,Oklahoma,Second Class,33,2.94,2.98,3.02,-0.04,0.0,0,WITHIN_SLA
+60,25,Central,Michigan,Second Class,44,2.93,2.98,3.02,-0.05,0.0,0,WITHIN_SLA
+60,25,Central,North Dakota,Second Class,41,2.93,2.98,3.02,-0.05,0.0,0,WITHIN_SLA
+60,25,East,Georgia,Second Class,42,2.93,3.04,3.02,-0.11,0.0,0,WITHIN_SLA
+60,25,South,Alabama,Second Class,43,2.93,3.02,3.02,-0.09,0.0,0,WITHIN_SLA
+60,25,West,Idaho,Second Class,46,2.93,3.01,3.02,-0.08,0.0,0,WITHIN_SLA
+60,25,West,Washington,Second Class,54,2.93,3.01,3.02,-0.08,0.0,0,WITHIN_SLA
+61,26,Central,Indiana,Second Class,23,2.87,2.98,3.02,-0.11,0.0,0,WITHIN_SLA
+62,27,East,New Jersey,Second Class,62,2.85,3.04,3.02,-0.19,0.0,0,WITHIN_SLA
+62,27,East,Rhode Island,Second Class,55,2.85,3.04,3.02,-0.19,0.0,0,WITHIN_SLA
+63,28,Central,Ohio,Second Class,30,2.83,2.98,3.02,-0.15,0.0,0,WITHIN_SLA
+63,28,Central,Texas,Second Class,36,2.83,2.98,3.02,-0.15,0.0,0,WITHIN_SLA
+63,28,South,Kentucky,Second Class,23,2.83,3.02,3.02,-0.19,0.0,0,WITHIN_SLA
+63,28,South,Tennessee,Second Class,46,2.83,3.02,3.02,-0.19,0.0,0,WITHIN_SLA
+64,29,East,Delaware,Second Class,45,2.82,3.04,3.02,-0.22,0.0,0,WITHIN_SLA
+65,30,West,Hawaii,Second Class,45,2.78,3.01,3.02,-0.23,0.0,0,WITHIN_SLA
+66,31,West,California,Second Class,37,2.76,3.01,3.02,-0.25,0.0,0,WITHIN_SLA
+67,32,West,Oregon,Second Class,48,2.73,3.01,3.02,-0.28,0.0,0,WITHIN_SLA
+68,33,Central,Illinois,Second Class,25,2.72,2.98,3.02,-0.26,0.0,0,WITHIN_SLA
+69,34,Central,Wisconsin,Second Class,12,2.67,2.98,3.02,-0.31,0.0,0,WITHIN_SLA
+70,1,West,Alaska,First Class,39,2.46,2.06,2.01,0.4,0.0,0,WITHIN_SLA
+71,2,Central,Wisconsin,First Class,31,2.39,2.05,2.01,0.34,0.0,0,WITHIN_SLA
+72,3,East,Connecticut,First Class,26,2.35,2.0,2.01,0.35,0.0,0,WITHIN_SLA
+72,3,West,New Mexico,First Class,48,2.35,2.06,2.01,0.29,0.0,0,WITHIN_SLA
+73,4,West,Arizona,First Class,58,2.34,2.06,2.01,0.28,0.0,0,WITHIN_SLA
+74,5,West,Utah,First Class,34,2.29,2.06,2.01,0.23,0.0,0,WITHIN_SLA
+75,6,Central,Nebraska,First Class,13,2.23,2.05,2.01,0.18,0.0,0,WITHIN_SLA
+76,7,Central,Michigan,First Class,27,2.19,2.05,2.01,0.14,0.0,0,WITHIN_SLA
+76,7,East,New Hampshire,First Class,21,2.19,2.0,2.01,0.19,0.0,0,WITHIN_SLA
+77,8,Central,Indiana,First Class,33,2.18,2.05,2.01,0.13,0.0,0,WITHIN_SLA
+77,8,East,Delaware,First Class,17,2.18,2.0,2.01,0.18,0.0,0,WITHIN_SLA
+78,9,Central,Texas,First Class,29,2.14,2.05,2.01,0.09,0.0,0,WITHIN_SLA
+79,10,East,Maryland,First Class,16,2.13,2.0,2.01,0.13,0.0,0,WITHIN_SLA
+79,10,East,New York,First Class,39,2.13,2.0,2.01,0.13,0.0,0,WITHIN_SLA
+80,11,West,Washington,First Class,51,2.12,2.06,2.01,0.06,0.0,0,WITHIN_SLA
+81,12,Central,Illinois,First Class,20,2.1,2.05,2.01,0.05,0.0,0,WITHIN_SLA
+82,13,Central,Minnesota,First Class,22,2.09,2.05,2.01,0.04,0.0,0,WITHIN_SLA
+83,14,Central,Missouri,First Class,35,2.06,2.05,2.01,0.01,0.0,0,WITHIN_SLA
+83,14,West,Colorado,First Class,35,2.06,2.06,2.01,0.0,0.0,0,WITHIN_SLA
+84,15,Central,Kansas,First Class,20,2.05,2.05,2.01,0.0,0.0,0,WITHIN_SLA
+85,16,West,Nevada,First Class,28,2.04,2.06,2.01,-0.02,0.0,0,WITHIN_SLA
+86,17,East,Georgia,First Class,34,2.03,2.0,2.01,0.03,0.0,0,WITHIN_SLA
+86,17,East,Pennsylvania,First Class,31,2.03,2.0,2.01,0.03,0.0,0,WITHIN_SLA
+87,18,Central,Oklahoma,First Class,24,2.0,2.05,2.01,-0.05,0.0,0,WITHIN_SLA
+87,18,East,Virginia,First Class,40,2.0,2.0,2.01,0.0,0.0,0,WITHIN_SLA
+88,19,East,North Carolina,First Class,28,1.96,2.0,2.01,-0.04,0.0,0,WITHIN_SLA
+88,19,South,Alabama,First Class,26,1.96,1.78,2.01,0.18,0.0,0,WITHIN_SLA
+89,20,East,Rhode Island,First Class,15,1.93,2.0,2.01,-0.07,0.0,0,WITHIN_SLA
+89,20,East,West Virginia,First Class,41,1.93,2.0,2.01,-0.07,0.0,0,WITHIN_SLA
+90,21,East,Maine,First Class,37,1.92,2.0,2.01,-0.08,0.0,0,WITHIN_SLA
+91,22,East,Massachusetts,First Class,45,1.91,2.0,2.01,-0.09,0.0,0,WITHIN_SLA
+91,22,West,Idaho,First Class,22,1.91,2.06,2.01,-0.15,0.0,0,WITHIN_SLA
+92,23,South,South Carolina,First Class,18,1.89,1.78,2.01,0.11,0.0,0,WITHIN_SLA
+93,24,Central,South Dakota,First Class,24,1.88,2.05,2.01,-0.17,0.0,0,WITHIN_SLA
+93,24,East,Florida,First Class,26,1.88,2.0,2.01,-0.12,0.0,0,WITHIN_SLA
+94,25,Central,North Dakota,First Class,14,1.86,2.05,2.01,-0.19,0.0,0,WITHIN_SLA
+94,25,South,Louisiana,First Class,22,1.86,1.78,2.01,0.08,0.0,0,WITHIN_SLA
+94,25,West,Oregon,First Class,44,1.86,2.06,2.01,-0.2,0.0,0,WITHIN_SLA
+95,26,West,Wyoming,First Class,41,1.85,2.06,2.01,-0.21,0.0,0,WITHIN_SLA
+96,27,East,New Jersey,First Class,29,1.83,2.0,2.01,-0.17,0.0,0,WITHIN_SLA
+97,28,South,Tennessee,First Class,16,1.81,1.78,2.01,0.03,0.0,0,WITHIN_SLA
+97,28,West,Hawaii,First Class,26,1.81,2.06,2.01,-0.25,0.0,0,WITHIN_SLA
+98,29,East,Vermont,First Class,25,1.8,2.0,2.01,-0.2,0.0,0,WITHIN_SLA
+99,30,Central,Ohio,First Class,37,1.76,2.05,2.01,-0.29,0.0,0,WITHIN_SLA
+100,31,Central,Iowa,First Class,25,1.72,2.05,2.01,-0.33,0.0,0,WITHIN_SLA
+101,32,South,Mississippi,First Class,30,1.67,1.78,2.01,-0.11,0.0,0,WITHIN_SLA
+102,33,West,California,First Class,33,1.64,2.06,2.01,-0.42,0.0,0,WITHIN_SLA
+103,34,West,Montana,First Class,41,1.63,2.06,2.01,-0.43,0.0,0,WITHIN_SLA
+104,35,South,Kentucky,First Class,16,1.56,1.78,2.01,-0.22,0.0,0,WITHIN_SLA
+105,36,South,Arkansas,First Class,7,1.43,1.78,2.01,-0.35,0.0,0,WITHIN_SLA
+106,1,Central,Michigan,Same Day,9,0.67,0.09,0.09,0.58,0.0,0,WITHIN_SLA
+107,2,East,Virginia,Same Day,8,0.63,0.08,0.09,0.55,0.0,0,WITHIN_SLA
+108,3,Central,Texas,Same Day,7,0.43,0.09,0.09,0.34,0.0,0,WITHIN_SLA
+109,4,Central,Indiana,Same Day,3,0.33,0.09,0.09,0.24,0.0,0,WITHIN_SLA
+109,4,South,Kentucky,Same Day,6,0.33,0.07,0.09,0.26,0.0,0,WITHIN_SLA
+109,4,West,Colorado,Same Day,6,0.33,0.1,0.09,0.23,0.0,0,WITHIN_SLA
+109,4,West,Wyoming,Same Day,9,0.33,0.1,0.09,0.23,0.0,0,WITHIN_SLA
+110,5,West,Utah,Same Day,10,0.3,0.1,0.09,0.2,0.0,0,WITHIN_SLA
+111,6,West,New Mexico,Same Day,8,0.25,0.1,0.09,0.15,0.0,0,WITHIN_SLA
+112,7,East,Maryland,Same Day,13,0.23,0.08,0.09,0.15,0.0,0,WITHIN_SLA
+113,8,East,Maine,Same Day,11,0.18,0.08,0.09,0.1,0.0,0,WITHIN_SLA
+114,9,East,New York,Same Day,12,0.17,0.08,0.09,0.09,0.0,0,WITHIN_SLA
+114,9,West,Oregon,Same Day,12,0.17,0.1,0.09,0.07,0.0,0,WITHIN_SLA
+115,10,West,Idaho,Same Day,9,0.11,0.1,0.09,0.01,0.0,0,WITHIN_SLA
+116,11,East,Massachusetts,Same Day,10,0.1,0.08,0.09,0.02,0.0,0,WITHIN_SLA
+117,12,Central,Wisconsin,Same Day,11,0.09,0.09,0.09,0.0,0.0,0,WITHIN_SLA
+118,13,South,Louisiana,Same Day,24,0.08,0.07,0.09,0.01,0.0,0,WITHIN_SLA
+119,14,West,Washington,Same Day,17,0.06,0.1,0.09,-0.04,0.0,0,WITHIN_SLA
+120,15,West,Hawaii,Same Day,21,0.05,0.1,0.09,-0.05,0.0,0,WITHIN_SLA
+121,16,Central,Illinois,Same Day,8,0.0,0.09,0.09,-0.09,0.0,0,WITHIN_SLA
+121,16,Central,Iowa,Same Day,4,0.0,0.09,0.09,-0.09,0.0,0,WITHIN_SLA
+121,16,Central,Kansas,Same Day,7,0.0,0.09,0.09,-0.09,0.0,0,WITHIN_SLA
+121,16,Central,Minnesota,Same Day,9,0.0,0.09,0.09,-0.09,0.0,0,WITHIN_SLA
+121,16,Central,Missouri,Same Day,9,0.0,0.09,0.09,-0.09,0.0,0,WITHIN_SLA
+121,16,Central,Nebraska,Same Day,10,0.0,0.09,0.09,-0.09,0.0,0,WITHIN_SLA
+121,16,Central,North Dakota,Same Day,9,0.0,0.09,0.09,-0.09,0.0,0,WITHIN_SLA
+121,16,Central,Ohio,Same Day,6,0.0,0.09,0.09,-0.09,0.0,0,WITHIN_SLA
+121,16,Central,Oklahoma,Same Day,8,0.0,0.09,0.09,-0.09,0.0,0,WITHIN_SLA
+121,16,Central,South Dakota,Same Day,16,0.0,0.09,0.09,-0.09,0.0,0,WITHIN_SLA
+121,16,East,Connecticut,Same Day,17,0.0,0.08,0.09,-0.08,0.0,0,WITHIN_SLA
+121,16,East,Delaware,Same Day,14,0.0,0.08,0.09,-0.08,0.0,0,WITHIN_SLA
+121,16,East,Florida,Same Day,16,0.0,0.08,0.09,-0.08,0.0,0,WITHIN_SLA
+121,16,East,Georgia,Same Day,3,0.0,0.08,0.09,-0.08,0.0,0,WITHIN_SLA
+121,16,East,New Hampshire,Same Day,5,0.0,0.08,0.09,-0.08,0.0,0,WITHIN_SLA
+121,16,East,New Jersey,Same Day,2,0.0,0.08,0.09,-0.08,0.0,0,WITHIN_SLA
+121,16,East,North Carolina,Same Day,12,0.0,0.08,0.09,-0.08,0.0,0,WITHIN_SLA
+121,16,East,Pennsylvania,Same Day,4,0.0,0.08,0.09,-0.08,0.0,0,WITHIN_SLA
+121,16,East,Rhode Island,Same Day,9,0.0,0.08,0.09,-0.08,0.0,0,WITHIN_SLA
+121,16,East,Vermont,Same Day,5,0.0,0.08,0.09,-0.08,0.0,0,WITHIN_SLA
+121,16,East,West Virginia,Same Day,19,0.0,0.08,0.09,-0.08,0.0,0,WITHIN_SLA
+121,16,South,Alabama,Same Day,7,0.0,0.07,0.09,-0.07,0.0,0,WITHIN_SLA
+121,16,South,Arkansas,Same Day,1,0.0,0.07,0.09,-0.07,0.0,0,WITHIN_SLA
+121,16,South,Mississippi,Same Day,7,0.0,0.07,0.09,-0.07,0.0,0,WITHIN_SLA
+121,16,South,South Carolina,Same Day,4,0.0,0.07,0.09,-0.07,0.0,0,WITHIN_SLA
+121,16,South,Tennessee,Same Day,5,0.0,0.07,0.09,-0.07,0.0,0,WITHIN_SLA
+121,16,West,Alaska,Same Day,11,0.0,0.1,0.09,-0.1,0.0,0,WITHIN_SLA
+121,16,West,Arizona,Same Day,7,0.0,0.1,0.09,-0.1,0.0,0,WITHIN_SLA
+121,16,West,California,Same Day,16,0.0,0.1,0.09,-0.1,0.0,0,WITHIN_SLA
+121,16,West,Montana,Same Day,11,0.0,0.1,0.09,-0.1,0.0,0,WITHIN_SLA
+121,16,West,Nevada,Same Day,6,0.0,0.1,0.09,-0.1,0.0,0,WITHIN_SLA

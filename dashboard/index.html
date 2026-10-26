@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Retail Margin & Inventory Leakage: A Last-Mile Decision Engine interactive operational dashboard.">
+  <title>Retail Margin &amp; Inventory Leakage — Decision Engine Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📊</text></svg>">
+</head>
+<body>
+
+  <!-- Top Sticky Header -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="brand-section">
+        <div class="brand-badge">DE</div>
+        <div class="brand-titles">
+          <h1 id="app-title">
+            Retail Margin &amp; Inventory Leakage
+            <span class="status-badge" id="pipeline-status">Live Engine</span>
+          </h1>
+          <p id="last-updated-text">A Last-Mile Operational Decision Engine · 9,994 Transaction Records</p>
+        </div>
+      </div>
+
+      <!-- Main Navigation Tabs -->
+      <nav class="nav-tabs" aria-label="Dashboard views">
+        <button class="tab-btn active" id="tab-btn-exec" data-tab="tab-executive">
+          <span>Executive Overview</span>
+        </button>
+        <button class="tab-btn" id="tab-btn-cat" data-tab="tab-category">
+          <span>Pricing &amp; Diagnostics</span>
+        </button>
+        <button class="tab-btn" id="tab-btn-ops" data-tab="tab-operations">
+          <span>Frontline Action Center</span>
+          <span class="tab-pill" id="nav-alert-count">0</span>
+        </button>
+        <button class="tab-btn" id="tab-btn-sql" data-tab="tab-sql">
+          <span>SQL Lab &amp; Audit</span>
+        </button>
+      </nav>
+
+      <div class="header-actions">
+        <button class="btn-secondary" id="btn-export-alerts" title="Export Action Queue to CSV">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          Export Queue
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Interactive Global Filter Bar -->
+  <section class="filter-bar" aria-label="Filters">
+    <div class="filter-container">
+      <div class="filter-group">
+        <span class="filter-label">Filters:</span>
+
+        <!-- Fiscal Year Slicer -->
+        <select class="filter-select" id="filter-year" aria-label="Filter by Fiscal Year">
+          <option value="ALL">All Fiscal Years</option>
+          <option value="2022">FY 2022</option>
+          <option value="2021">FY 2021</option>
+          <option value="2020">FY 2020</option>
+          <option value="2019">FY 2019</option>
+        </select>
+
+        <!-- Category Slicer -->
+        <select class="filter-select" id="filter-category" aria-label="Filter by Category">
+          <option value="ALL">All Categories</option>
+          <option value="Furniture">Furniture</option>
+          <option value="Technology">Technology</option>
+          <option value="Office Supplies">Office Supplies</option>
+        </select>
+
+        <!-- Region Slicer -->
+        <select class="filter-select" id="filter-region" aria-label="Filter by Region">
+          <option value="ALL">All US Regions</option>
+          <option value="West">West</option>
+          <option value="East">East</option>
+          <option value="Central">Central</option>
+          <option value="South">South</option>
+        </select>
+
+        <!-- Ship Mode Slicer -->
+        <select class="filter-select" id="filter-shipmode" aria-label="Filter by Shipping Mode">
+          <option value="ALL">All Shipping Modes</option>
+          <option value="Same Day">Same Day</option>
+          <option value="First Class">First Class</option>
+          <option value="Second Class">Second Class</option>
+          <option value="Standard Class">Standard Class</option>
+        </select>
+
+        <!-- Alert Priority Slicer -->
+        <select class="filter-select" id="filter-priority" aria-label="Filter by Alert Priority">
+          <option value="ALL">All Risk Tiers</option>
+          <option value="ALERT_ONLY">Active Alerts Only</option>
+          <option value="1">Priority 1 (Urgent)</option>
+          <option value="2">Priority 2 (High)</option>
+          <option value="3">Priority 3 (Medium)</option>
+          <option value="4">Priority 4 (Low)</option>
+        </select>
+
+        <!-- Action Code Slicer -->
+        <select class="filter-select" id="filter-action" aria-label="Filter by Action Code">
+          <option value="ALL">All Action Codes</option>
+          <option value="FREEZE_DISCOUNT">Freeze Discount</option>
+          <option value="AUDIT_FREIGHT">Audit Freight</option>
+          <option value="URGENT_RESTOCK">Urgent Restock</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <input type="text" class="search-input" id="filter-search" placeholder="Search orders, states, SKUs..." aria-label="Search alerts and orders">
+        <button class="btn-secondary" id="btn-reset-filters" title="Reset all filters to defaults">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path><path d="M3 3v5h5"></path></svg>
+          Reset Filters
+        </button>
+      </div>
+    </div>
+
+    <!-- Active Filter Tags / Chips -->
+    <div class="active-chips-bar" id="active-filter-chips" style="display: none;"></div>
+  </section>
+
+  <!-- Main Workspace -->
+  <main class="app-main">
+
+    <!-- TAB 1: EXECUTIVE MARGIN & REVENUE HEALTH -->
+    <div class="tab-content active" id="tab-executive">
+      
+      <!-- Primary KPI Row -->
+      <div class="kpi-grid">
+        <div class="kpi-card" style="--accent-color: var(--blue-500);">
+          <div class="kpi-header">
+            <span class="kpi-title">Gross Sales Revenue</span>
+            <div class="kpi-icon">💰</div>
+          </div>
+          <div class="kpi-value" id="kpi-gross-sales">$0</div>
+          <div class="kpi-footer">
+            <span class="kpi-delta positive" id="delta-sales">+0.0% YoY</span>
+            <span>Total Orders: <strong id="metric-total-orders">0</strong></span>
+          </div>
+        </div>
+
+        <div class="kpi-card" style="--accent-color: var(--teal-500);">
+          <div class="kpi-header">
+            <span class="kpi-title">Net Profit</span>
+            <div class="kpi-icon">📈</div>
+          </div>
+          <div class="kpi-value" id="kpi-net-profit">$0</div>
+          <div class="kpi-footer">
+            <span class="kpi-delta positive" id="delta-margin">+0.0 pp YoY</span>
+            <span>Loss-Making: <strong id="metric-loss-orders" style="color: var(--rose-400);">0</strong></span>
+          </div>
+        </div>
+
+        <div class="kpi-card" style="--accent-color: var(--amber-500);">
+          <div class="kpi-header">
+            <span class="kpi-title">Blended Profit Margin</span>
+            <div class="kpi-icon">🎯</div>
+          </div>
+          <div class="kpi-value" id="kpi-margin-pct">0.0%</div>
+          <div class="kpi-footer">
+            <span>Portfolio Target: <strong>12.0%</strong></span>
+            <span style="color: var(--amber-400);">Discount Erosion Active</span>
+          </div>
+        </div>
+
+        <div class="kpi-card" style="--accent-color: var(--rose-500);">
+          <div class="kpi-header">
+            <span class="kpi-title">Total Discount Bleed</span>
+            <div class="kpi-icon">⚠️</div>
+          </div>
+          <div class="kpi-value" id="kpi-discount-loss" style="color: var(--rose-400);">$0</div>
+          <div class="kpi-footer">
+            <span>Foregone Revenue Due to Markdown</span>
+            <span class="kpi-delta negative">Leakage</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Visual 2 & Visual 4: Waterfall & Monthly Trend -->
+      <div class="visuals-row">
+        <!-- Visual 2: Profit Leakage Waterfall -->
+        <div class="visual-card">
+          <div class="visual-header">
+            <div class="visual-title">
+              <h3>Where Does Gross Revenue Go?</h3>
+              <p>Profit Leakage Bridge: Original List Price → Applied Discount → COGS → Final Margin</p>
+            </div>
+          </div>
+          <div class="chart-container">
+            <canvas id="chart-waterfall"></canvas>
+          </div>
+        </div>
+
+        <!-- Visual 4: Dual-Axis Revenue & Margin Over Time -->
+        <div class="visual-card">
+          <div class="visual-header">
+            <div class="visual-title">
+              <h3>Monthly Revenue &amp; Margin Velocity</h3>
+              <p>Dual-Axis Trend: Gross Sales Volume vs. Blended Margin Point Trajectory</p>
+            </div>
+          </div>
+          <div class="chart-container">
+            <canvas id="chart-monthly-trend"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- Visual 3: Geographic State Margin Health Cartogram Heatmap -->
+      <div class="visual-card visuals-full">
+        <div class="visual-header">
+          <div class="visual-title">
+            <h3>Geographic Margin &amp; Leakage Heatmap</h3>
+            <p>State-by-State Performance Grid · Visual 3: Diverging Color Saturation by Margin &amp; Risk Concentration</p>
+          </div>
+          <div class="metric-toggle-group" id="state-heatmap-toggles">
+            <button class="metric-toggle-btn active" data-metric="margin_pct">Blended Margin %</button>
+            <button class="metric-toggle-btn" data-metric="discount_bleed">Discount Bleed ($)</button>
+            <button class="metric-toggle-btn" data-metric="profit">Net Profit ($)</button>
+            <button class="metric-toggle-btn" data-metric="alert_count">Alert Count</button>
+          </div>
+        </div>
+
+        <div class="state-cartogram-wrapper">
+          <div class="state-cartogram-grid" id="state-cartogram-container">
+            <!-- Rendered dynamically by app.js -->
+          </div>
+          <div class="heatmap-legend-bar">
+            <span>Critical Bleed (&lt; -15%)</span>
+            <div class="legend-gradient-strip"></div>
+            <span>Healthy Margin (&gt; +15%)</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- TAB 2: CATEGORY & PRICING DIAGNOSTICS -->
+    <div class="tab-content" id="tab-category">
+      
+      <!-- Visual 5 & Visual 6: Quadrant Scatter & Sub-Category Ranking -->
+      <div class="visuals-row">
+        <!-- Visual 5: Pricing Quadrant Scatter -->
+        <div class="visual-card">
+          <div class="visual-header">
+            <div class="visual-title">
+              <h3>The Pricing Quadrant: Discount Rate vs. Margin %</h3>
+              <p>Bubble size = Gross Revenue. Identifies structural discount traps vs. stars.</p>
+            </div>
+          </div>
+          <div class="chart-container">
+            <canvas id="chart-pricing-quadrant"></canvas>
+          </div>
+          
+          <div class="quadrant-legend-grid">
+            <div class="quadrant-item star"><strong>★ STAR</strong><br>Low Disc &lt; 20% | High Margin</div>
+            <div class="quadrant-item monitor"><strong>◉ MONITOR</strong><br>High Disc ≥ 20% | Profitable</div>
+            <div class="quadrant-item investigate"><strong>▲ INVESTIGATE</strong><br>Low Disc &lt; 20% | Loss Leader</div>
+            <div class="quadrant-item danger"><strong>✖ DANGER ZONE</strong><br>High Disc ≥ 20% | Severe Bleed</div>
+          </div>
+        </div>
+
+        <!-- Visual 6: Sub-Category Profit Ranking -->
+        <div class="visual-card">
+          <div class="visual-header">
+            <div class="visual-title">
+              <h3>Sub-Category Net Profit Contribution</h3>
+              <p>Loss Leaders Highlighted (Tables, Bookcases, Supplies driving majority of leakage)</p>
+            </div>
+          </div>
+          <div class="chart-container">
+            <canvas id="chart-category-ranking"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- Visual 7: Sub-Category x Region Cross-Dimensional Profitability Heatmap -->
+      <div class="visual-card visuals-full" style="margin-top: 24px;">
+        <div class="visual-header">
+          <div class="visual-title">
+            <h3>Cross-Dimensional Heatmap: Sub-Category × Region Profitability</h3>
+            <p>Visual 7: Identifies geographic cluster anomalies (e.g. Tables in Central, Bookcases in East)</p>
+          </div>
+          <div class="metric-toggle-group" id="subcat-heatmap-toggles">
+            <button class="metric-toggle-btn active" data-metric="margin_pct">Margin %</button>
+            <button class="metric-toggle-btn" data-metric="profit">Net Profit ($)</button>
+            <button class="metric-toggle-btn" data-metric="sales">Gross Sales ($)</button>
+            <button class="metric-toggle-btn" data-metric="avg_discount">Avg Discount %</button>
+          </div>
+        </div>
+
+        <div class="heatmap-table-wrapper" id="subcat-heatmap-container">
+          <!-- Rendered dynamically by app.js -->
+        </div>
+        <div class="heatmap-legend-bar">
+          <span>High Loss / Margin Erosion</span>
+          <div class="legend-gradient-strip"></div>
+          <span>High Profit / Expanding Margin</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- TAB 3: FRONTLINE ACTION CENTER -->
+    <div class="tab-content" id="tab-operations">
+      
+      <!-- Operations KPI Summary -->
+      <div class="kpi-grid">
+        <div class="kpi-card" style="--accent-color: var(--purple-500);">
+          <div class="kpi-header">
+            <span class="kpi-title">Freeze Discount Alerts</span>
+            <div class="kpi-icon">🛑</div>
+          </div>
+          <div class="kpi-value" id="op-kpi-freeze">0</div>
+          <div class="kpi-footer">
+            <span>Owner: <strong>Category Manager</strong></span>
+            <span>SLA: <strong>4 hrs</strong></span>
+          </div>
+        </div>
+
+        <div class="kpi-card" style="--accent-color: var(--cyan-500);">
+          <div class="kpi-header">
+            <span class="kpi-title">Audit Freight Alerts</span>
+            <div class="kpi-icon">🚚</div>
+          </div>
+          <div class="kpi-value" id="op-kpi-audit">0</div>
+          <div class="kpi-footer">
+            <span>Owner: <strong>Logistics Lead</strong></span>
+            <span>SLA: <strong>2-8 hrs</strong></span>
+          </div>
+        </div>
+
+        <div class="kpi-card" style="--accent-color: var(--amber-500);">
+          <div class="kpi-header">
+            <span class="kpi-title">Urgent Restock / High-Vol</span>
+            <div class="kpi-icon">📦</div>
+          </div>
+          <div class="kpi-value" id="op-kpi-restock">0</div>
+          <div class="kpi-footer">
+            <span>Owner: <strong>Store Operations</strong></span>
+            <span>SLA: <strong>24 hrs</strong></span>
+          </div>
+        </div>
+
+        <div class="kpi-card" style="--accent-color: var(--rose-500);">
+          <div class="kpi-header">
+            <span class="kpi-title">Total Revenue at Risk</span>
+            <div class="kpi-icon">⚡</div>
+          </div>
+          <div class="kpi-value" id="op-kpi-revenue-risk" style="color: var(--rose-400);">$0</div>
+          <div class="kpi-footer">
+            <span>Orders Requiring Immediate Action</span>
+            <span class="kpi-delta negative">Action Required</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Visual 8 & Visual 9: Heatmap & Histogram -->
+      <div class="visuals-row">
+        <!-- Visual 8: Fulfillment Delay Heatmap -->
+        <div class="visual-card">
+          <div class="visual-header">
+            <div class="visual-title">
+              <h3>Fulfillment Bottleneck Matrix</h3>
+              <p>Average Shipping Duration (Days) &amp; Carrier SLA Breaches by Region × Ship Mode</p>
+            </div>
+          </div>
+          <div class="heatmap-table-wrapper" id="heatmap-container">
+            <!-- Rendered by app.js -->
+          </div>
+        </div>
+
+        <!-- Visual 9: Fulfillment Lag Distribution Histogram -->
+        <div class="visual-card">
+          <div class="visual-header">
+            <div class="visual-title">
+              <h3>Fulfillment Lag Distribution</h3>
+              <p>SLA Breach Frequency Breakdown Across All 9,994 Transaction Shipments</p>
+            </div>
+          </div>
+          <div class="chart-container">
+            <canvas id="chart-fulfillment-lag"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- Visual 10: Frontline Action Queue Table -->
+      <div class="visual-card visuals-full">
+        <div class="visual-header">
+          <div class="visual-title">
+            <h3>Frontline Action Queue</h3>
+            <p>Prioritized by Risk Score &amp; Impact · Click any row for prescriptive remediation</p>
+          </div>
+          <span class="status-badge" id="queue-count-badge">Loading queue...</span>
+        </div>
+
+        <div class="data-table-wrapper" style="max-height: 480px;">
+          <table class="data-table" id="alert-queue-table">
+            <thead>
+              <tr>
+                <th>Priority</th>
+                <th>Order ID</th>
+                <th>Action Code</th>
+                <th>Category</th>
+                <th>Sub-Category</th>
+                <th>Region</th>
+                <th>Sales</th>
+                <th>Profit</th>
+                <th>Margin %</th>
+                <th>Assigned Owner / SLA</th>
+              </tr>
+            </thead>
+            <tbody id="alert-queue-tbody">
+              <!-- Rendered by app.js -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- TAB 4: SQL LAB & AUDIT -->
+    <div class="tab-content" id="tab-sql">
+      <div class="visual-card visuals-full">
+        <div class="visual-header">
+          <div class="visual-title">
+            <h3>Module 2: Analytical SQL Query Lab &amp; Audit Trail</h3>
+            <p>Direct outputs from SQLite ANSI queries (CTEs, Window Partitioning, NTILE Deciles, and YoY LAG)</p>
+          </div>
+        </div>
+        
+        <div id="sql-queries-container">
+          <!-- Rendered by app.js -->
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Order Deep Dive Modal Drawer -->
+  <div class="modal-overlay" id="order-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div>
+          <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700;">Order Inspection</span>
+          <h3 id="modal-order-id">CA-XXXX-XXXXXX</h3>
+        </div>
+        <button class="btn-close" id="modal-close-btn" aria-label="Close modal">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="order-meta-grid">
+          <div class="meta-box">
+            <div class="label">Product / Sub-Category</div>
+            <div class="val" id="modal-product" style="font-size: 0.95rem; white-space: normal;">-</div>
+          </div>
+          <div class="meta-box">
+            <div class="label">Prescriptive Action</div>
+            <div class="val" id="modal-action" style="color: var(--purple-400);">-</div>
+          </div>
+          <div class="meta-box">
+            <div class="label">Gross Sales / Revenue</div>
+            <div class="val" id="modal-sales">-</div>
+          </div>
+          <div class="meta-box">
+            <div class="label">Net Profit / Margin %</div>
+            <div class="val" id="modal-profit" style="color: var(--rose-400);">-</div>
+          </div>
+          <div class="meta-box">
+            <div class="label">Applied Markdown Discount</div>
+            <div class="val" id="modal-discount">-</div>
+          </div>
+          <div class="meta-box">
+            <div class="label">Accountable Owner &amp; SLA</div>
+            <div class="val" id="modal-owner" style="font-size: 0.9rem;">-</div>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 14px;">
+          <span style="font-size: 0.72rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700;">Triggered Risk Rules:</span>
+          <div id="modal-rules-list" style="margin-top: 6px;"></div>
+        </div>
+
+        <div class="rationale-callout">
+          <strong>Operational Rationale:</strong>
+          <p id="modal-rationale" style="margin-top: 4px;">-</p>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn-secondary" onclick="document.getElementById('order-modal').classList.remove('open')">Close</button>
+        <button class="btn-primary" id="modal-ack-btn">Acknowledge &amp; Dispatch Task</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts (Local Chart.js, Charts Logic, App Controller) -->
+  <script src="js/chart.min.js"></script>
+  <script src="js/charts.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
